@@ -19,6 +19,8 @@
 		18192E162C3EA2B900F34C6D /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18192E152C3EA2B900F34C6D /* ApiManager.swift */; };
 		18192E192C3EA50C00F34C6D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18192E182C3EA50C00F34C6D /* Helper.swift */; };
 		18192E1B2C3EA86B00F34C6D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18192E1A2C3EA86B00F34C6D /* Models.swift */; };
+		18192E1F2C4044DE00F34C6D /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18192E1E2C4044DE00F34C6D /* PostsCell.swift */; };
+		18192E212C4049C100F34C6D /* AlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18192E202C4049C100F34C6D /* AlbumsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		18192E152C3EA2B900F34C6D /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		18192E182C3EA50C00F34C6D /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		18192E1A2C3EA86B00F34C6D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		18192E1E2C4044DE00F34C6D /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
+		18192E202C4049C100F34C6D /* AlbumsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +77,9 @@
 				18192E172C3EA4F900F34C6D /* NetworkManager */,
 				18192E0B2C332F8C00F34C6D /* TabbarVC.swift */,
 				18192E0D2C332FAF00F34C6D /* PostsVC.swift */,
+				18192E1E2C4044DE00F34C6D /* PostsCell.swift */,
 				18192E0F2C332FC300F34C6D /* AlbumsVC.swift */,
+				18192E202C4049C100F34C6D /* AlbumsCell.swift */,
 				18192E112C332FD900F34C6D /* PhotosVC.swift */,
 				18192E132C332FE100F34C6D /* UsersVC.swift */,
 				18192E002C332E7F00F34C6D /* Assets.xcassets */,
@@ -165,6 +171,7 @@
 			files = (
 				18192DF82C332E7E00F34C6D /* AppDelegate.swift in Sources */,
 				18192E122C332FD900F34C6D /* PhotosVC.swift in Sources */,
+				18192E1F2C4044DE00F34C6D /* PostsCell.swift in Sources */,
 				18192E102C332FC300F34C6D /* AlbumsVC.swift in Sources */,
 				18192E142C332FE100F34C6D /* UsersVC.swift in Sources */,
 				18192E162C3EA2B900F34C6D /* ApiManager.swift in Sources */,
@@ -173,6 +180,7 @@
 				18192E0E2C332FAF00F34C6D /* PostsVC.swift in Sources */,
 				18192E0C2C332F8C00F34C6D /* TabbarVC.swift in Sources */,
 				18192E1B2C3EA86B00F34C6D /* Models.swift in Sources */,
+				18192E212C4049C100F34C6D /* AlbumsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
