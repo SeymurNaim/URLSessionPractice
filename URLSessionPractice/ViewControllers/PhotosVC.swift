@@ -1,5 +1,5 @@
 //
-//  AlbumsVC.swift
+//  PhotosVC.swift
 //  URLSessionPractice
 //
 //  Created by Apple on 01.07.24.
@@ -7,31 +7,30 @@
 
 import UIKit
 
-class AlbumsVC: UIViewController {
-
-    private let manager = ApiManager<[AlbumsModel]>()
-    var datas: [AlbumsModel] = []
+class PhotosVC: UIViewController {
     
-    private let tableView: UITableView = {
+    private let manager = ApiManager<[PhotosModel]>()
+    var datas: [PhotosModel] = []
+    
+    let tableView: UITableView = {
         let table = UITableView()
         table.backgroundColor = .white
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
         configureUI()
-        fetchData(for: .albums)
+        fetchPhotos(for: .photos)
         
         tableView.rowHeight = UITableView.automaticDimension
     }
     
-    private func fetchData(for category: TabbarSections) {
-        manager.fetchData(for: category) { [weak self] fetchedData, error in
+    private func fetchPhotos(for page: TabbarSections) {
+        manager.fetchData(for: page) { [weak self] fetchedData, error in
             guard let self = self else { return }
             if let fetchedData = fetchedData {
                 self.datas = fetchedData
@@ -48,7 +47,7 @@ class AlbumsVC: UIViewController {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(AlbumsCell.self, forCellReuseIdentifier: "AlbumsCell")
+        tableView.register(PhotosCell.self, forCellReuseIdentifier: "PhotosCell")
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -57,17 +56,24 @@ class AlbumsVC: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
+    
+
+   
+
 }
 
-extension AlbumsVC: UITableViewDataSource, UITableViewDelegate {
+extension PhotosVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         datas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumsCell") as! AlbumsCell
-        cell.titleLabel.text = "\(datas[indexPath.row].title)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotosCell") as! PhotosCell
+        cell.configureCell(withImage: "\(datas[indexPath.row].url)")
+        cell.nameLabel.text = "\(datas[indexPath.row].title)"
         
         return cell
     }
+    
+    
 }

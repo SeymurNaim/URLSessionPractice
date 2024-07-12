@@ -1,5 +1,5 @@
 //
-//  PostsVC.swift
+//  AlbumsVC.swift
 //  URLSessionPractice
 //
 //  Created by Apple on 01.07.24.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class PostsVC: UIViewController {
-    
-    private let manager = ApiManager<[PostModel]>()
-    var datas: [PostModel] = []
+class AlbumsVC: UIViewController {
+
+    private let manager = ApiManager<[AlbumsModel]>()
+    var datas: [AlbumsModel] = []
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -24,13 +24,14 @@ class PostsVC: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
-        tableView.rowHeight = UITableView.automaticDimension
         configureUI()
-        fetchData(for: .post)
+        fetchData(for: .albums)
+        
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
-    private func fetchData(for category: TabbarSections) {
-        manager.fetchData(for: category) { [weak self] fetchedData, error in
+    private func fetchData(for page: TabbarSections) {
+        manager.fetchData(for: page) { [weak self] fetchedData, error in
             guard let self = self else { return }
             if let fetchedData = fetchedData {
                 self.datas = fetchedData
@@ -47,7 +48,7 @@ class PostsVC: UIViewController {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(PostsCell.self, forCellReuseIdentifier: "PostsCell")
+        tableView.register(AlbumsCell.self, forCellReuseIdentifier: "AlbumsCell")
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -58,17 +59,15 @@ class PostsVC: UIViewController {
     }
 }
 
-extension PostsVC: UITableViewDataSource, UITableViewDelegate {
+extension AlbumsVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         datas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostsCell") as! PostsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumsCell") as! AlbumsCell
         cell.titleLabel.text = "\(datas[indexPath.row].title)"
-        cell.bodyLabel.text = "\(datas[indexPath.row].body)"
         
         return cell
     }
 }
-
