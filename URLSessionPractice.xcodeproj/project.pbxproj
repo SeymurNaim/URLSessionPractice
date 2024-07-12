@@ -24,6 +24,7 @@
 		18192E252C416C3900F34C6D /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18192E242C416C3900F34C6D /* PhotosCell.swift */; };
 		18192E272C41711B00F34C6D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18192E262C41711B00F34C6D /* UIView.swift */; };
 		18192E2A2C41720000F34C6D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 18192E292C41720000F34C6D /* Kingfisher */; };
+		18192E2C2C41A56500F34C6D /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18192E2B2C41A56500F34C6D /* UsersCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		18192E202C4049C100F34C6D /* AlbumsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCell.swift; sourceTree = "<group>"; };
 		18192E242C416C3900F34C6D /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
 		18192E262C41711B00F34C6D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		18192E2B2C41A56500F34C6D /* UsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				18192E1E2C4044DE00F34C6D /* PostsCell.swift */,
 				18192E202C4049C100F34C6D /* AlbumsCell.swift */,
 				18192E242C416C3900F34C6D /* PhotosCell.swift */,
+				18192E2B2C41A56500F34C6D /* UsersCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				18192E122C332FD900F34C6D /* PhotosVC.swift in Sources */,
 				18192E1F2C4044DE00F34C6D /* PostsCell.swift in Sources */,
 				18192E102C332FC300F34C6D /* AlbumsVC.swift in Sources */,
+				18192E2C2C41A56500F34C6D /* UsersCell.swift in Sources */,
 				18192E142C332FE100F34C6D /* UsersVC.swift in Sources */,
 				18192E162C3EA2B900F34C6D /* ApiManager.swift in Sources */,
 				18192E192C3EA50C00F34C6D /* Helper.swift in Sources */,
